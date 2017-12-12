@@ -2,6 +2,10 @@ import React, { Component } from "react";
 import { Navbar, Nav, NavItem } from "react-bootstrap";
 
 class App extends Component {
+  onLoginClick() {
+    this.props.onLoginClick();
+  }
+
   render() {
     return (
       <Navbar>
@@ -9,7 +13,9 @@ class App extends Component {
           <Navbar.Brand>ReactAuth App</Navbar.Brand>
         </Navbar.Header>
         <Nav>
-          <NavItem href="#">Login</NavItem>
+          <NavItem onClick={this.onLoginClick.bind(this)} href="#">
+            Login
+          </NavItem>
         </Nav>
       </Navbar>
     );

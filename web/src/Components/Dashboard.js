@@ -1,13 +1,26 @@
 import React, { Component } from "react";
-import AuthLock from "auth0-lock";
 import { Grid, Row, Col } from "react-bootstrap";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "./App.css";
 
-class App extends Component {
+class Dashboard extends Component {
   render() {
-    return <div className="App">MyApp</div>;
+    return (
+      <div>
+        <Grid>
+          <Row>
+            <Col xs={9} md={9}>
+              <h1>Dashbaord</h1>
+              <p>Welcome to the dashboard</p>
+            </Col>
+            <Col xs={3} md={3}>
+              <img src={this.props.profile.picture} role="presentation" />
+              <h3>{this.props.profile.nickname}</h3>
+              <strong>{this.props.profile.email}</strong>
+            </Col>
+          </Row>
+        </Grid>
+      </div>
+    );
   }
 }
 
-export default App;
+export default Dashboard;
